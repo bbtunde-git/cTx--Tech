@@ -70,16 +70,12 @@ const Contact = () => {
       message: ""})
   };
 
-  const finishSubmit = () => {
-    console.log(inputFields);   
-   //inputRef.current.value = '';
-  };
-
   useEffect(() => {
     if (Object.keys(errors).length === 0 && submitting) {
-      finishSubmit();
-      }
-  }, [errors]);
+      console.log(inputFields);
+      setSubmitting(false);
+    }
+  }, [errors, submitting, inputFields]);
 
   return (
     <>
