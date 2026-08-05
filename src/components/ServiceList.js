@@ -58,7 +58,7 @@ const ServiceList = () => {
                     </Link>
                   </h4>
                   <p className="description">
-                    Our web/mobile development service encompass building digital experiences; websiteand browser apps versus native or cross-platform smartphone software. Our development core concepts include Frontend, Backend, Native &amp; cress-platform mobile apps...
+                    Our web/mobile development service encompass building digital experiences; website and browser apps versus native or cross-platform smartphone software. Our development core concepts include Frontend, Backend, Native &amp; Cross-platform mobile apps...
                   </p>
                   <Link to="/services" className="btn-get-started">
                     Read More
