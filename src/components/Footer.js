@@ -34,7 +34,7 @@ const Footer = () => {
                 </Link>
                 <p>
                   We are a global leader in  General IT Consultancy, offer Services across Enterprise Software Solutions,
-                  Web/Mobile Development, Motion Graphics, Visual Effects &amp; Animation.
+                  Web/Mobile Development, Motion Graphics, 3D Generalist.
                 </p>
                 <div className="social-links d-flex  mt-3">
                   <Link to="/" className="twitter">
