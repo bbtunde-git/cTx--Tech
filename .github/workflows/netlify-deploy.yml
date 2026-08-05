@@ -29,6 +29,17 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: npx netlify-cli@latest link --id $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --force
 
+      - name: Netlify debug (verify token and site)
+        if: always()
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "Inspecting Netlify auth and site (sensitive values are masked)"
+          npx netlify-cli@latest status --auth $NETLIFY_AUTH_TOKEN || true
+          npx netlify-cli@latest sites:get $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN || true
+          npx netlify-cli@latest sites:list --auth $NETLIFY_AUTH_TOKEN || true
+
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
