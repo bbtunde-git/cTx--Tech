@@ -10,18 +10,18 @@ const Facts = () => {
             <div className="col-lg-12 text-center">
               <div className="section-header">
                 <h2 className="text-white">Our Footprints</h2>
-                <p>Delivering service excellence to over 43 million Happy Customers across geography… </p>
+                <p>Delivering excellenct service to over 43 million happy customers across Africa… </p>
               </div>
               <div className="row counters">
                 <div className="col-lg-4 col-6 text-center">
-                  <span  className="purecounter">17</span>
+                  <span  className="purecounter">3</span>
                   <h3> COUNTRIES </h3>
                   <p> Global Presence </p>
                 </div>
                 <div className="col-lg-4 col-6 text-center">
-                  <span className="purecounter">82</span>
+                  <span className="purecounter">20</span>
                   <h3> CUSTOMERS </h3>
-                  <p>Across the Globe</p>
+                  <p>Across Africa</p>
                 </div>
                 <div className="col-lg-4 col-6 text-center">
                   <span  className="purecounter">43</span>

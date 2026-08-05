@@ -105,7 +105,7 @@ const About = () => {
                      <p>Babatunde is a visionary Technocrat with 16 Years of experience and has worked with consulting majors & service industries in the field of IT technologies &amp; Telecoms. His specialization includes Networking, Cloud DevOps, System/Cloud Architecture, Data Engineering and Enterprise solutions .</p>
                      <div className="social">
                      <Link to ="/"><i className="bi bi-twitter"></i></Link>                
-                     <Link to ="/"> <i className="bi bi-linkedin"></i> </Link>
+                     <Link to ="https://www.linkedin.com/in/babatunde-olaleye/" target='_blank'> <i className="bi bi-linkedin"></i> </Link>
                      </div>
                   </div>
                </div>
@@ -118,11 +118,11 @@ const About = () => {
                   <div className="member-info">
                      <h4>Oluwaseun Olaleye </h4>
                      <span>Co-Founder & Director</span>
-                     <p>Oluwaseun is a visionary and entrepreneur in his own right. He has worked with IT and Engineering majors before entering the telecom business. He has over 14 years of management experience with IT & Engineering majors and has significant global experience and also an expert in corporate alliance. </p>
+                     <p>Oluwaseun is a visionary and entrepreneur in his own right. He has over 10 years of management experience with IT & Engineering majors and has significant global experience in corporate alliance. </p>
                      <p> Oluwaseun has extensive multi-functional management experience in marketing, sales, business and corporate development and holds a Bachelors degree in Computer Science.</p>
                      <div className="social">
                         <Link to ="/"><i className="bi bi-twitter"></i></Link>                
-                        <Link to ="https://www.linkedin.com/in/sundaramoorthy-velayutham-92697aa/"> <i className="bi bi-linkedin" target="_blank"></i> </Link>
+                        <Link to ="https://www.linkedin.com/in/sundaramoorthy-velayutham-92697aa/" target='_blank'> <i className="bi bi-linkedin"></i> </Link>
                      </div>
                   </div>
                </div>
@@ -137,7 +137,7 @@ const About = () => {
                      <span>Media Director</span>
                      <p>Babatunde is a visionary Technocrat with 16 Years of experience and has worked with consulting majors & service industries in the field of IT technologies &amp; Telecoms. His specialization includes Networking, Cloud DevOps, System/Cloud Architecture, Data Engineering and Enterprise solutions .</p>
                      <div className="social">
-                     <Link to ="/"><i className="bi bi-twitter"></i></Link>                
+                     <Link to ="/" target='_blank'><i className="bi bi-twitter"></i></Link>                
                      <Link to ="/"> <i className="bi bi-linkedin"></i> </Link>
                      </div>
                   </div>
