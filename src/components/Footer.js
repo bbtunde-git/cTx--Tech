@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import footerLogo from '../img/sym-logo.svg'
+import footerLogo from '../img/symbiotic-logo.png'
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -106,7 +106,7 @@ const Footer = () => {
                  
                   #1, Olaleye Street <br /> Park View Estate, <br /> Ikoyi, Lagos State <br></br> Nigeria. <br />
                   <br />
-                  <strong>Phone:</strong> +234 802 088 5566 <br />
+                  <strong>Phone:</strong> +234 802 088 5566, +234 803 111 6260 <br />
                   <strong>Email: </strong>
                   <a href="mailto:info@ctx-technologies.com">                  
                      info@ctx-technologies.com

@@ -22,8 +22,7 @@ const Carousel = () => {
           >
             <div className="col-lg-7 col-md-12 col-12">
               <h2 className="animate-fade-up" data-aos="fade-up">
-                Global Leader In Enterprise Software Solution, Web/Mobile Development, Visual Effect &
-                animation
+                Global Leader In Enterprise Software Solution, Web/Mobile Development, 3D Generalist.
               </h2>
               <blockquote className="animate-fade-up delay-1" data-aos="fade-up" data-aos-delay="100">
                 <p>

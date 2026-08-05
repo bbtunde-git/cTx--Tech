@@ -96,11 +96,8 @@ const Contact = () => {
                     <h4>Location:</h4>
                     <h5>Nigeria:</h5>
                     <p>
-                      # 1, Olaleye Street, Park View Estae, <br /> Ikoyi, Lagos State.
+                      # 1, Olaleye Street, Park View Estate, <br /> Ikoyi, Lagos State.
                     </p>
-                    <br />
-                    <h5>Nigeria:</h5>
-                    <p>P.O.Box No 95114 </p>
                   </div>
                 </div>
 

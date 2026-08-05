@@ -127,6 +127,22 @@ const About = () => {
                   </div>
                </div>
             </div>
+            <div className="row member d-flex align-items-center ">
+               <div className="col-md-2">
+                  <div className="pic"><img src={manag_photo1} className="img-fluid" alt=""/></div>
+               </div>
+               <div className="col-md-10">
+                  <div className="member-info">
+                     <h4>Tomilola Olaleye</h4>
+                     <span>Media Director</span>
+                     <p>Babatunde is a visionary Technocrat with 16 Years of experience and has worked with consulting majors & service industries in the field of IT technologies &amp; Telecoms. His specialization includes Networking, Cloud DevOps, System/Cloud Architecture, Data Engineering and Enterprise solutions .</p>
+                     <div className="social">
+                     <Link to ="/"><i className="bi bi-twitter"></i></Link>                
+                     <Link to ="/"> <i className="bi bi-linkedin"></i> </Link>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </section>
    

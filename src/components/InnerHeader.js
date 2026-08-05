@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/sym-logo-inverse.svg";
+import logo from "../img/sym-logo.png";
 //import Navbar from "./Navbar";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
