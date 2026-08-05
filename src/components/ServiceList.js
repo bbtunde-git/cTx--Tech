@@ -10,7 +10,7 @@ const ServiceList = () => {
             <h2>What we do? </h2>
             <p>
               We are a global leader in  General IT Consultancy, offer Services across Enterprise Software Solutions,
-                  Web/Mobile Development, Motion Graphics, Visual Effects &amp; Animation.{" "}
+                  Web/Mobile Development, &amp; 3D Generalist.{" "}
             </p>
           </div>
           <div className="row gy-5">
@@ -30,10 +30,7 @@ const ServiceList = () => {
                     </Link>
                   </h4>
                   <p className="description">
-                    Education is the key to unlocking the golden door of
-                    freedom. Educational content are crucial as it is an
-                    investment in human capital that yields tremendous benefits
-                    to personal, social and economic development...
+                    Our enterprise software solution are large-scale programs designed to satisfy the needs of our clients organization. They streamline complex operations like finance, human resources, &amp; supply chain. Core types include ERP, CRM, &amp; business intelligence tools...
                   </p>
                   <Link to="/services" className="btn-get-started">
                     Read More
@@ -61,10 +58,7 @@ const ServiceList = () => {
                     </Link>
                   </h4>
                   <p className="description">
-                    Our Entertainment content can keep the consumer engaged for
-                    hours if that’s what one is interested in. We have an
-                    impressive array of Content on Movies, Fashion, on Demand
-                    Videos and many more...
+                    Our web/mobile development service encompass building digital experiences; websiteand browser apps versus native or cross-platform smartphone software. Our development core concepts include Frontend, Backend, Native &amp; cress-platform mobile apps...
                   </p>
                   <Link to="/services" className="btn-get-started">
                     Read More
@@ -88,14 +82,11 @@ const ServiceList = () => {
                 <div>
                   <h4 className="title">
                     <Link to="/services" className="stretched-link">
-                      Visual Effect &amp; Animation{" "}
+                      3D Generalist{" "}
                     </Link>
                   </h4>
                   <p className="description">
-                    Get access to a bunch of games ranging from Action,
-                    Adventure, Arcade, Board, Cards, Casino ... and many to play
-                    on your device. If obvious choice for people whose idea of
-                    entertainment involves gaming as one...
+                    Our highly versatile graphics team are capable of handling every phase of the 3D asset creation pipeline &amp; seamlessly move between creativity, artistic tasks, &amp; highly complex technical troubleshooting with skills in Modelling &amp; Sculpting, Character Rigging, Animation, Lighting &amp; Rendering, VFX...
                   </p>
                   <Link to="/services" className="btn-get-started">
                     Read More
@@ -123,10 +114,7 @@ const ServiceList = () => {
                     </Link>
                   </h4>
                   <p className="description">
-                    Learning a sport is fun and challenging... sports like
-                    football, cricket, Tennis, Badminton, Rugby, volleyball and
-                    many more as such has tutoring videos talks about the
-                    history of the game, rules, knack to learn...{" "}
+                    Our professional service helps businesses plan, fix, &amp; grow their IT systems. We focus on company's goal &amp; digital assets, then advice on best practices that would enhance scalability in all aspect. Our core focus are &amp; not limited to: IT Strategy, Cybersecurity, Cloud Migration, Software Setup ...{" "}
                   </p>
                   <Link to="/services" className="btn-get-started">
                     Read More
