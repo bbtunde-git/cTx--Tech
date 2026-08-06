@@ -37,7 +37,7 @@ const Footer = () => {
                   Web/Mobile Development, Motion Graphics, 3D Generalist.
                 </p>
                 <div className="social-links d-flex  mt-3">
-                  <Link to="https://www.x.com/tee__babs/" className="twitter">
+                  <Link to="https://www.x.com/tee__babs/" className="twitter" target="_blank">
                     <i className="bi bi-twitter"></i>
                   </Link>
 
@@ -45,7 +45,7 @@ const Footer = () => {
                     <i className="bi bi-facebook"></i>
                   </Link>
                   
-                  <Link to ="https://www.linkedin.com/babatunde-olaleye/" className="linkedin">
+                  <Link to ="https://www.linkedin.com/babatunde-olaleye/" className="linkedin" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-linkedin"></i>
                   </Link>
                 </div>
