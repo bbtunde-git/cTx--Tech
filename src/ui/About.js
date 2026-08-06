@@ -134,7 +134,7 @@ const About = () => {
                </div>
                <div className="col-md-10">
                   <div className="member-info">
-                     <h4>Tomilola Olaleye</h4>
+                     <h4>Tomilola Abeke</h4>
                      <span>Media Director</span>
                      <p>Tomilola is a senior leader who manages the organization's advertising, marketing campaigns, &amp; media strategies. She has 10 years industry experience in media, strategy planning, budget control, vendor deals, data review; &amp; acts as the creative lead at cTc Technologies.</p>
                      <div className="social">
