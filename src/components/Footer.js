@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import footerLogo from '../img/symbiotic-logo.png'
+import footerLogo from '../img/ctx_icon.png'
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -37,7 +37,7 @@ const Footer = () => {
                   Web/Mobile Development, Motion Graphics, 3D Generalist.
                 </p>
                 <div className="social-links d-flex  mt-3">
-                  <Link to="/" className="twitter">
+                  <Link to="https://www.x.com/tee__babs/" className="twitter">
                     <i className="bi bi-twitter"></i>
                   </Link>
 
@@ -45,7 +45,7 @@ const Footer = () => {
                     <i className="bi bi-facebook"></i>
                   </Link>
                   
-                  <Link to ="https://www.linkedin.com/company/symbiotic-infotech-pvt-ltd/" className="linkedin">
+                  <Link to ="https://www.linkedin.com/babatunde-olaleye/" className="linkedin">
                     <i className="bi bi-linkedin"></i>
                   </Link>
                 </div>

@@ -4,6 +4,7 @@ import '../../node_modules/aos/dist/aos.css'
 import about_img from '../img/about-image.jpg'
 import manag_photo1 from '../img/team/Babatunde.jpg';
 import manag_photo2 from '../img/team/Babatunde-3.jpg';
+import manag_photo3 from '../img/team/Tomilola.jpg'
 import InnerHeaderBanner from '../components/InnerHeaderBanner';
 import InnerHeader from '../components/InnerHeader';
 import Footer from '../components/Footer';
@@ -129,13 +130,13 @@ const About = () => {
             </div>
             <div className="row member d-flex align-items-center ">
                <div className="col-md-2">
-                  <div className="pic"><img src={manag_photo1} className="img-fluid" alt=""/></div>
+                  <div className="pic"><img src={manag_photo3} className="img-fluid" alt=""/></div>
                </div>
                <div className="col-md-10">
                   <div className="member-info">
                      <h4>Tomilola Olaleye</h4>
                      <span>Media Director</span>
-                     <p>Babatunde is a visionary Technocrat with 16 Years of experience and has worked with consulting majors & service industries in the field of IT technologies &amp; Telecoms. His specialization includes Networking, Cloud DevOps, System/Cloud Architecture, Data Engineering and Enterprise solutions .</p>
+                     <p>Tomilola is a senior leader who manages the organization's advertising, marketing campaigns, &amp; media strategies. She has 10 years industry experience in media, strategy planning, budget control, vendor deals, data review; &amp; acts as the creative lead at cTc Technologies.</p>
                      <div className="social">
                      <Link to ="/" target='_blank'><i className="bi bi-twitter"></i></Link>                
                      <Link to ="/"> <i className="bi bi-linkedin"></i> </Link>
