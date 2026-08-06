@@ -1,553 +1,446 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCode,
+  faBolt,
+  faServer,
+  faGem,
+  faMobile,
+  faGlobe,
+  faCloud,
+  faDatabase,
+  faFire,
+  faChartLine,
+  faDiagramProject,
+  faGear,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  faReact,
+  faVuejs,
+  faAngular,
+  faTailwindCss,
+  faNodeJs,
+  faPython,
+  faGolang,
+  faJava,
+  faFlutter,
+  faApple,
+  faAndroid,
+  faAws,
+  faMicrosoft,
+  faGoogle,
+  faKubernetes,
+  faPostgresql,
+  faDocker,
+  faGitAlt,
+} from '@fortawesome/free-brands-svg-icons'
 import './Technology.css'
 
-const Technology = () => (
-<section className="tech-stack mb-5" id="Technology">
-            <div className="container m-auto">
-                <div className="section-heading text-center">
-                    <span className="tag-line"><i className="fa-solid fa-gear"></i>Technology Stack</span>
-                    <h2>Cutting-Edge <span>Technologies</span></h2>
-                    <p>We leverage the latest technologies and frameworks to build scalable, secure, <br /> and
-                        high-performance
-                        solutions.
-                    </p>
-                </div>
-                <div className="tab-navigation">
-                    <ul className="nav justify-content-center" id="myTab" role="tablist">
-                        <li className="nav-item" role="presentation">
-                            <button className="nav-link active" id="home-tab-btn" data-bs-toggle="tab"
-                                data-bs-target="#frontend-tab" type="button" role="tab" aria-controls="frontend-tab"
-                                aria-selected="true"><i className="fa-solid fa-code"></i>Frontend</button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="home-tab-btn" data-bs-toggle="tab"
-                                data-bs-target="#backend-tab" type="button" role="tab" aria-controls="backend-tab"
-                                aria-selected="true"><i className="fa-solid fa-server"></i>Backend</button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="home-tab-btn" data-bs-toggle="tab" data-bs-target="#mobile-tab"
-                                type="button" role="tab" aria-controls="mobile-tab" aria-selected="true"><i
-                                    className="fa-solid fa-mobile"></i>Mobile</button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="home-tab-btn" data-bs-toggle="tab"
-                                data-bs-target="#cloud-devops-tab" type="button" role="tab"
-                                aria-controls="cloud-devops-tab" aria-selected="true"><i
-                                    className="fa-solid fa-cloud"></i>Cloud &
-                                DevOps</button>
-                        </li>
+const tabs = [
+  {
+    tabId: 'frontend-tab',
+    label: 'Frontend',
+    icon: faCode,
+    title: 'Frontend Technologies',
+    description: ['Cutting-edge frameworks for building modern user interfaces'],
+    cards: [
+      {
+        cardClass: 'tech-card',
+        icon: faReact,
+        title: 'React.js',
+        description: [
+          'Component-based library for building',
+          'interactive user interfaces with virtual',
+          'DOM',
+        ],
+        features: ['JSX', 'Hooks', 'Redux'],
+      },
+      {
+        cardClass: 'tech-card bg-light-1',
+        iconText: 'Next',
+        title: 'Next.js',
+        description: [
+          'Full-stack React framework with',
+          'server-side rendering and static',
+          'generation',
+        ],
+        featuresClass: 'features features-2 d-flex justify-content-between align-items-center',
+        features: ['SSR', 'SSG', 'API Routes'],
+      },
+      {
+        cardClass: 'tech-card bg-light-2',
+        icon: faVuejs,
+        title: 'Vue.js',
+        description: [
+          'Progressive framework for building',
+          'user interfaces with excellent',
+          'developer experience',
+        ],
+        featuresClass: 'features features-3 d-flex justify-content-between align-items-center',
+        features: ['Composition API', 'Vuex', 'Nuxt'],
+      },
+      {
+        cardClass: 'tech-card bg-light-3',
+        icon: faAngular,
+        title: 'Angular',
+        description: ['Comprehensive platform for building scalable web applications'],
+        featuresClass: 'features features-4 d-flex justify-content-between align-items-center',
+        features: ['TypeScript', 'RxJS', 'CLI'],
+      },
+      {
+        cardClass: 'tech-card bg-light-4',
+        icon: faTailwindCss,
+        title: 'Tailwind CSS',
+        description: ['Utility-first CSS framework for rapid UI development'],
+        featuresClass: 'features features-5 d-flex justify-content-between align-items-center',
+        features: ['Utility Classes', 'Responsive', 'Customization'],
+      },
+      {
+        cardClass: 'tech-card bg-light-5',
+        icon: faBolt,
+        title: 'Vite',
+        description: ['Next generation frontend tooling with lightning fast builds'],
+        featuresClass: 'features features-6 d-flex justify-content-between align-items-center',
+        features: ['Dev Server', 'Hot Reload', 'Rollup'],
+      },
+    ],
+  },
+  {
+    tabId: 'backend-tab',
+    label: 'Backend',
+    icon: faServer,
+    title: 'Backend Technologies',
+    description: ['Robust server-side technologies for scalable and secure applications'],
+    cards: [
+      {
+        cardClass: 'tech-card bg-light-2',
+        icon: faNodeJs,
+        title: 'Node.js',
+        description: [
+          "JavaScript runtime built on Chrome's",
+          'V8 engine for server-side development',
+        ],
+        featuresClass: 'features features-3 d-flex justify-content-between align-items-center',
+        features: ['Express.js', 'NPM', 'TypeScript'],
+      },
+      {
+        cardClass: 'tech-card',
+        icon: faPython,
+        title: 'Python',
+        description: [
+          'Versatile programming language with',
+          'powerful frameworks for web development',
+        ],
+        features: ['Django', 'FastAPI', 'Flask'],
+      },
+      {
+        cardClass: 'tech-card bg-light-6',
+        icon: faGolang,
+        title: 'Golang',
+        description: [
+          'Fast, statically typed language designed',
+          'for modern software development',
+        ],
+        featuresClass: 'features features-7 d-flex justify-content-between align-items-center',
+        features: ['Gin', 'Goroutines', 'Microservices'],
+      },
+      {
+        cardClass: 'tech-card bg-light-5',
+        icon: faJava,
+        title: 'Java',
+        description: [
+          'Enterprise-grade platform with robust',
+          'frameworks for large-scale applications',
+        ],
+        featuresClass: 'features features-6 d-flex justify-content-between align-items-center',
+        features: ['Spring Boot', 'Hibernate', 'Maven'],
+      },
+      {
+        cardClass: 'tech-card bg-light-7',
+        icon: faMicrosoft,
+        title: '.NET Core',
+        description: [
+          'Cross-platform framework for building',
+          'modern, cloud-based applications',
+        ],
+        featuresClass: 'features features-8 d-flex justify-content-between align-items-center',
+        features: ['C#', 'Entity Framework', 'Azure'],
+      },
+      {
+        cardClass: 'tech-card bg-light-8',
+        icon: faGem,
+        title: 'Ruby',
+        description: ['Dynamic language focused on simplicity and productivity'],
+        features: ['Rails', 'Sinatra', 'RubyGems'],
+      },
+    ],
+  },
+  {
+    tabId: 'mobile-tab',
+    label: 'Mobile',
+    icon: faMobile,
+    title: 'Mobile Technologies',
+    description: ['Native and cross-platform solutions for iOS and Android development'],
+    cards: [
+      {
+        cardClass: 'tech-card',
+        icon: faReact,
+        title: 'React Native',
+        description: [
+          'Cross-platform mobile development',
+          'using React and JavaScript',
+        ],
+        features: ['Expo', 'Navigation', 'Redux'],
+      },
+      {
+        cardClass: 'tech-card bg-light-1',
+        icon: faFlutter,
+        title: 'Flutter',
+        description: ["Google's UI toolkit for building natively compiled applications"],
+        featuresClass: 'features features-2 d-flex justify-content-between align-items-center',
+        features: ['Dart', 'Widgets', 'Material'],
+      },
+      {
+        cardClass: 'tech-card bg-light-2',
+        icon: faApple,
+        title: 'iOS Native',
+        description: ['Native iOS development using Swift and Xcode'],
+        features: ['Swift', 'SwiftUI', 'Core Data'],
+      },
+      {
+        cardClass: 'tech-card bg-light-3',
+        icon: faAndroid,
+        title: 'Android Native',
+        description: ['Native Android development using Kotlin and Android Studio'],
+        featuresClass: 'features features-4 d-flex justify-content-between align-items-center',
+        features: ['Kotlin', 'Jetpack', 'Room'],
+      },
+      {
+        cardClass: 'tech-card bg-light-4',
+        icon: faMicrosoft,
+        title: 'Xamarin',
+        description: ["Microsoft's cross-platform solution using C# and .NET"],
+        features: ['C#', 'Forms', 'MVVM'],
+      },
+      {
+        cardClass: 'tech-card bg-light-5',
+        icon: faGlobe,
+        title: 'PWA',
+        description: ['Progressive Web Apps with native-like mobile experiences'],
+        featuresClass: 'features features-6 d-flex justify-content-between align-items-center',
+        features: ['Service Worker', 'Manifest', 'Offline'],
+      },
+    ],
+  },
+  {
+    tabId: 'cloud-devops-tab',
+    label: 'Cloud & DevOps',
+    icon: faCloud,
+    title: 'Cloud & DevOps',
+    description: ['Modern cloud infrastructure and deployment technologies'],
+    cards: [
+      {
+        cardClass: 'tech-card bg-light-2',
+        icon: faAws,
+        title: 'Amazon AWS',
+        description: ['Comprehensive cloud computing platform with extensive services'],
+        featuresClass: 'features features-3 d-flex justify-content-between align-items-center',
+        features: ['EC2', 'Lambda', 'S3'],
+      },
+      {
+        cardClass: 'tech-card',
+        icon: faMicrosoft,
+        title: 'Microsoft Azure',
+        description: ['Enterprise cloud platform with integrated development tools'],
+        features: ['App Service', 'Functions', 'DevOps'],
+      },
+      {
+        cardClass: 'tech-card bg-light-6',
+        icon: faGoogle,
+        title: 'Google Cloud',
+        description: ["Google's cloud computing platform with AI and ML capabilities"],
+        featuresClass: 'features features-7 d-flex justify-content-between align-items-center',
+        features: ['Compute Engine', 'Cloud Run', 'BigQuery'],
+      },
+      {
+        cardClass: 'tech-card bg-light-5',
+        icon: faKubernetes,
+        title: 'Kubernetes',
+        description: ['Container orchestration system for automating deployment and scaling'],
+        features: ['Pods', 'Services', 'Helm'],
+      },
+      {
+        cardClass: 'tech-card bg-light-7',
+        icon: faDocker,
+        title: 'Docker',
+        description: ['Containerization platform for consistent application deployment'],
+        featuresClass: 'features features-8 d-flex justify-content-between align-items-center',
+        features: ['Containers', 'Images', 'Compose'],
+      },
+      {
+        cardClass: 'tech-card bg-light-8',
+        icon: faGitAlt,
+        title: 'CI/CD Pipeline',
+        description: ['Automated build, test, and deployment workflows'],
+        featuresClass: 'features features-9 d-flex justify-content-between align-items-center',
+        features: ['Jenkins', 'GitHub Actions', 'GitLab CI'],
+      },
+    ],
+  },
+  {
+    tabId: 'database-tab',
+    label: 'Database',
+    icon: faDatabase,
+    title: 'Database Technologies',
+    description: ['Robust data storage solutions for modern applications'],
+    cards: [
+      {
+        cardClass: 'tech-card',
+        icon: faPostgresql,
+        title: 'PostgreSQL',
+        description: ['Advanced open-source relational database with JSON support'],
+        features: ['ACID', 'JSON', 'Extensions'],
+      },
+      {
+        cardClass: 'tech-card bg-light-1',
+        iconText: 'Mongo',
+        title: 'MongoDB',
+        description: ['Flexible NoSQL document database for modern-app'],
+        featuresClass: 'features features-2 d-flex justify-content-between align-items-center',
+        features: ['Documents', 'Aggregation', 'Sharding'],
+      },
+      {
+        cardClass: 'tech-card bg-light-2',
+        icon: faFire,
+        title: 'Redis',
+        description: ['In-memory data structure store for caching and real-time applications'],
+        featuresClass: 'features features-3 d-flex justify-content-between align-items-center',
+        features: ['Cache', 'Pub/Sub', 'Streams'],
+      },
+      {
+        cardClass: 'tech-card bg-light-3',
+        icon: faDatabase,
+        title: 'MySQL',
+        description: ['Popular open-source relational database management system'],
+        featuresClass: 'features features-4 d-flex justify-content-between align-items-center',
+        features: ['InnoDB', 'Replication', 'Clustering'],
+      },
+      {
+        cardClass: 'tech-card bg-light-4',
+        icon: faChartLine,
+        title: 'Elasticsearch',
+        description: ['Distributed search and analytics engine for complex queries'],
+        featuresClass: 'features features-5 d-flex justify-content-between align-items-center',
+        features: ['Search', 'Analytics', 'Kibana'],
+      },
+      {
+        cardClass: 'tech-card bg-light-5',
+        icon: faDiagramProject,
+        title: 'GraphQL',
+        description: ['Query language and runtime for APIs with flexible data fetching'],
+        featuresClass: 'features features-6 d-flex justify-content-between align-items-center',
+        features: ['Schema', 'Resolvers', 'Apollo'],
+      },
+    ],
+  },
+]
 
-                        <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="home-tab-btn" data-bs-toggle="tab"
-                                data-bs-target="#database-tab" type="button" role="tab" aria-controls="database-tab"
-                                aria-selected="true"><i className="fa-solid fa-database"></i>Database</button>
-                        </li>
-                    </ul>
-                    <div className="tab-content" id="myTabContent">
-                        <div className="tab-pane fade show active" id="frontend-tab" role="tabpanel"
-                            aria-labelledby="home-tab-btn" tabIndex={0}>
-                            <div className="container slide">
-                                <div className="content-title text-center animation-element">
-                                    <h3>Frontend Technologies</h3>
-                                    <p>Cutting-edge frameworks for building modern user interfaces</p>
-                                </div>
-                                <div className="row g-4">
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card">
-                                            <span className="card-icon"><i className="fa-solid fa-atom"></i></span>
-                                            <h5>React.js</h5>
-                                            <p>Component-based library for building <br /> interactive user interfaces
-                                                with virtual <br /> DOM
-                                            </p>
-                                            <div className="features d-flex justify-content-between align-items-center">
-                                                <span>JSX</span>
-                                                <span>Hooks</span>
-                                                <span>Redux</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-1">
-                                            <span className="card-icon color bg-dark">Next</span>
-                                            <h5>Next.js</h5>
-                                            <p>Full-stack React framework with <br /> server-side rendering and static
-                                                <br /> generation
-                                            </p>
-                                            <div
-                                                className="features features-2 d-flex justify-content-between align-items-center ">
-                                                <span className="bg-dark-1">SSR</span>
-                                                <span className="bg-dark-1">SSG</span>
-                                                <span className="bg-dark-1">API Routes</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-2">
-                                            <span className="card-icon bg-dark-2"><i className="fa-brands fa-vuejs"></i></span>
-                                            <h5>Vue.js</h5>
-                                            <p>Progressive framework for building <br /> user interfaces with
-                                                excellent <br /> developer
-                                                experience
-                                            </p>
-                                            <div
-                                                className="features features-3 d-flex justify-content-between align-items-center">
-                                                <span>Composition API</span>
-                                                <span>Vuex</span>
-                                                <span>Nuxt</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-3">
-                                            <span className="card-icon bg-dark-3"><i
-                                                    className="fa-brands fa-angular"></i></span>
-                                            <h5>Angular</h5>
-                                            <p>Comprehensive platform for building <br /> scalable web applications
-                                            </p>
-                                            <div
-                                                className="features features-4 d-flex justify-content-between align-items-center ">
-                                                <span>TypeScript</span>
-                                                <span>RxJS</span>
-                                                <span>CLI</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-4">
-                                            <span className="card-icon bg-dark-4 "><i
-                                                    className="fa-brands fa-css3-alt"></i></span>
-                                            <h5>Tailwind CSS</h5>
-                                            <p>Utility-first CSS framework for rapid UI <br /> development
-                                            </p>
-                                            <div
-                                                className="features features-5 d-flex justify-content-between align-items-center">
-                                                <span>Utility Classes</span>
-                                                <span>Responsive</span>
-                                                <span>Customization</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-5">
-                                            <span className="card-icon bg-dark-5"><i className="fa-solid fa-bolt"></i></span>
-                                            <h5>Vite</h5>
-                                            <p>Next generation frontend tooling with <br /> lightning fast builds
-                                            </p>
-                                            <div
-                                                className="features features-6 d-flex justify-content-between align-items-center ">
-                                                <span>Dev Server</span>
-                                                <span>Hot Reload</span>
-                                                <span>Rollup</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tab-content " id="myTabContent">
-                        <div className="tab-pane fade" id="backend-tab" role="tabpanel" aria-labelledby="home-tab-btn"
-                            tabIndex={0}>
-                            <div className="container">
-                                <div className="content-title text-center animation-element">
-                                    <h3>Backend Technologies</h3>
-                                    <p>Robust server-side technologies for scalable and secure applications</p>
-                                </div>
-                                <div className="row g-4">
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-2">
-                                            <span className="card-icon bg-dark-2"><i
-                                                    className="fa-brands fa-node-js"></i></span>
-                                            <h5>Node.js</h5>
-                                            <p>JavaScript runtime built on Chrome's <br /> V8 engine for server-side
-                                                development
-                                            </p>
-                                            <div
-                                                className="features features-3 d-flex justify-content-between align-items-center">
-                                                <span>Express.js</span>
-                                                <span>NPM</span>
-                                                <span>TypeScript</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card">
-                                            <span className="card-icon"><i className="fa-brands fa-python"></i></span>
-                                            <h5>Python</h5>
-                                            <p>Versatile programming language with <br /> powerful frameworks for web
-                                                development
-                                            </p>
-                                            <div
-                                                className="features d-flex justify-content-between align-items-center">
-                                                <span>Django</span>
-                                                <span>FastAPI</span>
-                                                <span>Flask</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-6">
-                                            <span className="card-icon bg-dark-6"><i className="fa-brands fa-golang"></i></span>
-                                            <h5>Golang</h5>
-                                            <p>Fast, statically typed language designed <br /> for modern software
-                                                development
-                                            </p>
-                                            <div
-                                                className="features features-7 d-flex justify-content-between align-items-center ">
-                                                <span>Gin</span>
-                                                <span>Goroutines</span>
-                                                <span>Microservices</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-5">
-                                            <span className="card-icon bg-dark-5"><i className="fa-brands fa-java"></i></span>
-                                            <h5>Java</h5>
-                                            <p>Enterprise-grade platform with robust <br /> frameworks for large-scale
-                                                applications
-                                            </p>
-                                            <div
-                                                className="features features-6 d-flex justify-content-between align-items-center">
-                                                <span>Spring Boot</span>
-                                                <span>Hibernate</span>
-                                                <span>Maven</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-7">
-                                            <span className="card-icon bg-dark-7"><i className="fa-solid fa-atom"></i></span>
-                                            <h5>.NET Core</h5>
-                                            <p>Cross-platform framework for building <br /> modern, cloud-based
-                                                applications
-                                            </p>
-                                            <div
-                                                className="features features-8 d-flex justify-content-between align-items-center ">
-                                                <span>C#</span>
-                                                <span>Entity Framework</span>
-                                                <span>Azure</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-8">
-                                            <span className="card-icon bg-dark-8"><i className="fa-solid fa-gem"></i></span>
-                                            <h5>Ruby</h5>
-                                            <p>Dynamic language focused on <br /> simplicity and productivity
-                                            </p>
-                                            <div
-                                                className="features features-9 d-flex justify-content-between align-items-center">
-                                                <span>Rails</span>
-                                                <span>Sinatra</span>
-                                                <span>RubyGems</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tab-content" id="myTabContent">
-                        <div className="tab-pane fade" id="mobile-tab" role="tabpanel" aria-labelledby="home-tab-btn"
-                            tabIndex={0}>
-                            <div className="container slide">
-                                <div className="content-title text-center animation-element">
-                                    <h3>Mobile Technologies</h3>
-                                    <p>Native and cross-platform solutions for iOS and Android development</p>
-                                </div>
-                                <div className="row g-4">
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card">
-                                            <span className="card-icon"><i className="fa-solid fa-atom"></i></span>
-                                            <h5>React Native</h5>
-                                            <p>Cross-platform mobile development <br /> using React and JavaScript
-                                            </p>
-                                            <div className="features d-flex justify-content-between align-items-center">
-                                                <span>Expo</span>
-                                                <span>Navigation</span>
-                                                <span>Redux</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-1">
-                                            <span className="card-icon color bg-dark"><i
-                                                    className="fa-solid fa-mobile"></i></span>
-                                            <h5>Flutter</h5>
-                                            <p>Google's UI toolkit for building natively <br /> compiled applications
-                                            </p>
-                                            <div
-                                                className="features features-2 d-flex justify-content-between align-items-center ">
-                                                <span className="bg-dark-1">Dart</span>
-                                                <span className="bg-dark-1">Widgets</span>
-                                                <span className="bg-dark-1">Material</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-2">
-                                            <span className="card-icon bg-dark-2"><i className="fa-brands fa-apple"></i></span>
-                                            <h5>iOS Native</h5>
-                                            <p>Native iOS development using Swift <br /> and Xcode
-                                            </p>
-                                            <div
-                                                className="features features-3 d-flex justify-content-between align-items-center">
-                                                <span>Swift</span>
-                                                <span>SwiftUI</span>
-                                                <span>Core Data</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-3">
-                                            <span className="card-icon bg-dark-3"><i
-                                                    className="fa-brands fa-android"></i></span>
-                                            <h5>Android Native</h5>
-                                            <p>Native Android development using <br /> Kotlin and Android Studio
-                                            </p>
-                                            <div
-                                                className="features features-4 d-flex justify-content-between align-items-center ">
-                                                <span>Kotlin</span>
-                                                <span>Jetpack</span>
-                                                <span>Room</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-4">
-                                            <span className="card-icon bg-dark-4 "><i className="fa-solid fa-code"></i></span>
-                                            <h5>Xamarin</h5>
-                                            <p>Microsoft's cross-platform solution <br /> using C# and .NET
-                                            </p>
-                                            <div
-                                                className="features features-5 d-flex justify-content-between align-items-center">
-                                                <span>C#</span>
-                                                <span>Forms</span>
-                                                <span>MVVM</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-5">
-                                            <span className="card-icon bg-dark-5"><i className="fa-solid fa-globe"></i></span>
-                                            <h5>PWA</h5>
-                                            <p>Progressive Web Apps with native-like <br /> mobile experiences
-                                            </p>
-                                            <div
-                                                className="features features-6 d-flex justify-content-between align-items-center ">
-                                                <span>Service Worker</span>
-                                                <span>Manifest</span>
-                                                <span>Offline</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tab-content " id="myTabContent">
-                        <div className="tab-pane fade" id="cloud-devops-tab" role="tabpanel" aria-labelledby="home-tab-btn"
-                            tabIndex={0}>
-                            <div className="container">
-                                <div className="content-title text-center animation-element">
-                                    <h3>Cloud & DevOps</h3>
-                                    <p>Modern cloud infrastructure and deployment technologies</p>
-                                </div>
-                                <div className="row g-4">
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-2">
-                                            <span className="card-icon bg-dark-2"><i className="fa-brands fa-aws"></i></span>
-                                            <h5>Amazon AWS</h5>
-                                            <p>Comprehensive cloud computing <br /> platform with extensive services
-                                            </p>
-                                            <div
-                                                className="features features-3 d-flex justify-content-between align-items-center">
-                                                <span>EC2</span>
-                                                <span>Lambda</span>
-                                                <span>S3</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card">
-                                            <span className="card-icon"><i className="fa-brands fa-microsoft"></i></span>
-                                            <h5>Microsoft Azure</h5>
-                                            <p>Enterprise cloud platform with <br /> integrated development tools
-                                            </p>
-                                            <div className="features d-flex justify-content-between align-items-center ">
-                                                <span>App Service</span>
-                                                <span>Functions</span>
-                                                <span>DevOps</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-6">
-                                            <span className="card-icon bg-dark-6"><i className="fa-brands fa-google"></i></span>
-                                            <h5>Google Cloud</h5>
-                                            <p>Google's cloud computing platform <br /> with AI and ML capabilities
-                                            </p>
-                                            <div
-                                                className="features features-7 d-flex justify-content-between align-items-center ">
-                                                <span>Compute Engine</span>
-                                                <span>Cloud Run</span>
-                                                <span>BigQuery</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-5">
-                                            <span className="card-icon bg-dark-5 color">K8s</span>
-                                            <h5>Kubernetes</h5>
-                                            <p>Container orchestration system for <br /> automating deployment and
-                                                scaling
-                                            </p>
-                                            <div
-                                                className="features features-6 d-flex justify-content-between align-items-center">
-                                                <span>Pods</span>
-                                                <span>Services</span>
-                                                <span>Helm</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-7">
-                                            <span className="card-icon bg-dark-7"><i className="fa-brands fa-docker"></i></span>
-                                            <h5>Docker</h5>
-                                            <p>Containerization platform for <br /> consistent application deployment
-                                            </p>
-                                            <div
-                                                className="features features-8 d-flex justify-content-between align-items-center ">
-                                                <span>Containers</span>
-                                                <span>Images</span>
-                                                <span>Compose</span>
-                                            </div>
-                                        </div>
-                                    </div>
+const renderParagraph = (lines) =>
+  lines.map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      {index < lines.length - 1 && <br />}
+    </React.Fragment>
+  ))
 
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-8">
-                                            <span className="card-icon bg-dark-8"><i
-                                                    className="fa-solid fa-head-side-virus"></i></span>
-                                            <h5>CI/CD Pipeline</h5>
-                                            <p>Automated build, test, and deployment <br /> workflows
-                                            </p>
-                                            <div
-                                                className="features features-9 d-flex justify-content-between align-items-center">
-                                                <span>Jenkins</span>
-                                                <span>GitHub Actions</span>
-                                                <span>GitLab CI</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+const Technology = () => {
+  const [activeTab, setActiveTab] = useState(tabs[0].tabId)
+
+  return (
+    <section className="tech-stack mb-5" id="Technology">
+      <div className="container m-auto">
+        <div className="section-heading text-center">
+          <span className="tag-line">
+            <FontAwesomeIcon icon={faGear} />Technology Stack
+          </span>
+          <h2>
+            Cutting-Edge <span>Technologies</span>
+          </h2>
+          <p>
+            {renderParagraph([
+              'We leverage the latest technologies and frameworks to build scalable, secure,',
+              'and high-performance solutions.',
+            ])}
+          </p>
+        </div>
+
+        <div className="tab-navigation">
+          <ul className="nav justify-content-center" id="myTab" role="tablist">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.tabId
+              return (
+                <li className="nav-item" role="presentation" key={tab.tabId}>
+                  <button
+                    className={`nav-link${isActive ? ' active' : ''}`}
+                    id={`${tab.tabId}-btn`}
+                    type="button"
+                    role="tab"
+                    aria-controls={tab.tabId}
+                    aria-selected={isActive ? 'true' : 'false'}
+                    onClick={() => setActiveTab(tab.tabId)}
+                  >
+                    <FontAwesomeIcon icon={tab.icon} />
+                    {tab.label}
+                  </button>
+                </li>
+              )
+            })}
+          </ul>
+
+          <div className="tab-content" id="myTabContent">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.tabId
+              return (
+                <div
+                  key={tab.tabId}
+                  className={`tab-pane fade${isActive ? ' show active' : ''}`}
+                  id={tab.tabId}
+                  role="tabpanel"
+                  aria-labelledby={`${tab.tabId}-btn`}
+                  tabIndex={0}
+                >
+                  <div className={tab.containerClass ?? 'container'}>
+                    <div className="content-title text-center animation-element">
+                      <h3>{tab.title}</h3>
+                      <p>{tab.description[0]}</p>
                     </div>
-                    <div className="tab-content" id="myTabContent">
-                        <div className="tab-pane fade" id="database-tab" role="tabpanel" aria-labelledby="home-tab-btn"
-                            tabIndex={0}>
-                            <div className="container slide">
-                                <div className="content-title text-center animation-element">
-                                    <h3>Database Technologies</h3>
-                                    <p>Robust data storage solutions for modern applications</p>
-                                </div>
-                                <div className="row g-4">
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card">
-                                            <span className="card-icon"><i className="fa-solid fa-database"></i></span>
-                                            <h5>PostgreSQL</h5>
-                                            <p>Advanced open-source relational <br /> database with JSON support
-                                            </p>
-                                            <div className="features d-flex justify-content-between align-items-center">
-                                                <span>ACID</span>
-                                                <span>JSON</span>
-                                                <span>Extensions</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-1">
-                                            <span className="card-icon color bg-dark">Mongo</span>
-                                            <h5>MongoDB</h5>
-                                            <p>Flexible NoSQL document database for <br /> modern-app
-                                            </p>
-                                            <div
-                                                className="features features-2 d-flex justify-content-between align-items-center ">
-                                                <span className="bg-dark-1">Documents</span>
-                                                <span className="bg-dark-1">Aggregation</span>
-                                                <span className="bg-dark-1">Sharding</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-2">
-                                            <span className="card-icon bg-dark-2"><i className="fa-solid fa-fire"></i></span>
-                                            <h5>Redis</h5>
-                                            <p>In-memory data structure store for <br /> caching and real-time
-                                                applications
-                                            </p>
-                                            <div
-                                                className="features features-3 d-flex justify-content-between align-items-center">
-                                                <span>Cache</span>
-                                                <span>Pub/Sub</span>
-                                                <span>Streams</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-3">
-                                            <span className="card-icon bg-dark-3"><i
-                                                    className="fa-solid fa-database"></i></span>
-                                            <h5>MySQL</h5>
-                                            <p>Popular open-source relational <br /> database management system
-                                            </p>
-                                            <div
-                                                className="features features-4 d-flex justify-content-between align-items-center ">
-                                                <span>InnoDB</span>
-                                                <span>Replication</span>
-                                                <span>Clustering</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-4">
-                                            <span className="card-icon bg-dark-4 "><i
-                                                    className="fa-solid fa-chart-line"></i></span>
-                                            <h5>Elasticsearch</h5>
-                                            <p>Distributed search and analytics engine <br /> for complex queries
-                                            </p>
-                                            <div
-                                                className="features features-5 d-flex justify-content-between align-items-center">
-                                                <span>Search</span>
-                                                <span>Analytics </span>
-                                                <span>Kibana</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-12 col-md-6 col-lg-4 animation-element">
-                                        <div className="tech-card bg-light-5">
-                                            <span className="card-icon bg-dark-5"><i
-                                                    className="fa-solid fa-diagram-project"></i></span>
-                                            <h5>GraphQL</h5>
-                                            <p>Query language and runtime for APIs <br /> with flexible data fetching
-                                            </p>
-                                            <div
-                                                className="features features-6 d-flex justify-content-between align-items-center ">
-                                                <span>Schema</span>
-                                                <span>Resolvers</span>
-                                                <span>Apollo</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div className="row g-4">
+                      {tab.cards.map((card) => (
+                        <div className="col-sm-12 col-md-6 col-lg-4 animation-element" key={card.title}>
+                          <div className={card.cardClass}>
+                            <span className={card.iconText ? 'card-icon color bg-dark' : 'card-icon'}>
+                              {card.iconText ? card.iconText : <FontAwesomeIcon icon={card.icon} />}
+                            </span>
+                            <h5>{card.title}</h5>
+                            <p>{renderParagraph(card.description)}</p>
+                            <div className={card.featuresClass ?? 'features d-flex justify-content-between align-items-center'}>
+                              {card.features.map((feature) => (
+                                <span key={feature}>{feature}</span>
+                              ))}
                             </div>
+                          </div>
                         </div>
+                      ))}
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
-)
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default Technology
