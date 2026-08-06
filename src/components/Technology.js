@@ -45,7 +45,7 @@ const tabs = [
     description: ['Cutting-edge frameworks for building modern user interfaces'],
     cards: [
       {
-        cardClass: 'tech-card',
+        cardClass: 'tech-card bg-light-5',
         icon: faReact,
         title: 'React.js',
         description: [
@@ -124,7 +124,7 @@ const tabs = [
         features: ['Express.js', 'NPM', 'TypeScript'],
       },
       {
-        cardClass: 'tech-card',
+        cardClass: 'tech-card bg-light-5',
         icon: faPython,
         title: 'Python',
         description: [
@@ -167,7 +167,7 @@ const tabs = [
         features: ['C#', 'Entity Framework', 'Azure'],
       },
       {
-        cardClass: 'tech-card bg-light-8',
+        cardClass: 'tech-card bg-light-5',
         icon: faGem,
         title: 'Ruby',
         description: ['Dynamic language focused on simplicity and productivity'],
@@ -183,7 +183,7 @@ const tabs = [
     description: ['Native and cross-platform solutions for iOS and Android development'],
     cards: [
       {
-        cardClass: 'tech-card',
+        cardClass: 'tech-card bg-light-5',
         icon: faReact,
         title: 'React Native',
         description: [
@@ -248,7 +248,7 @@ const tabs = [
         features: ['EC2', 'Lambda', 'S3'],
       },
       {
-        cardClass: 'tech-card',
+        cardClass: 'tech-card bg-light-5',
         icon: faMicrosoft,
         title: 'Microsoft Azure',
         description: ['Enterprise cloud platform with integrated development tools'],
@@ -295,7 +295,7 @@ const tabs = [
     description: ['Robust data storage solutions for modern applications'],
     cards: [
       {
-        cardClass: 'tech-card',
+        cardClass: 'tech-card bg-light-5',
         icon: faPostgresql,
         title: 'PostgreSQL',
         description: ['Advanced open-source relational database with JSON support'],
@@ -362,7 +362,7 @@ const Technology = () => {
         <div className="section-heading text-center">
           <span className="tag-line">
             <FontAwesomeIcon icon={faGear} />Technology Stack
-          </span>
+          </span> <br/> <br/>
           <h2>
             Cutting-Edge <span>Technologies</span>
           </h2>

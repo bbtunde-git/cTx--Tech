@@ -889,6 +889,10 @@ position: relative;
   box-shadow: 0 18px 38px rgba(139, 92, 246, 0.18);
 }
 
+.services-list {
+  background: #fff7ed;
+}
+
 .services-list .single-service {
   animation: zoomIn 0.75s ease forwards;
   opacity: 0;
